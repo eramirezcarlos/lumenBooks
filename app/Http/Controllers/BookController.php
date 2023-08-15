@@ -29,7 +29,9 @@ class BookController extends Controller
      */
     public function index(): JsonResponse
     {
+
         $books = Book::all();
+        
 
         if( $books->isEmpty()){
             return $this->errorResponse('Not found', Response::HTTP_NOT_FOUND);

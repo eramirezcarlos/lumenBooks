@@ -14,11 +14,11 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    return $router->app->version() . "->books";
 });
 $router->get('/books', 'BookController@index');
 $router->post('/books','BookController@store');
-$router->post('/books/{book}','BookController@show');
+$router->get('/books/{book}','BookController@show');
 $router->put('/books/{book}','BookController@update');
 $router->patch('/books/{book}','BookController@update');
 $router->delete('/books/{book}','BookController@destroy');
